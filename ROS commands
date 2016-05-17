@@ -1,0 +1,6 @@
+rosrun sicktoolbox_wrapper sicklms _port:=/dev/XXX _baud:=38400
+
+cd ~/catkin_ws
+source ./devel/setup.bash
+
+sudo chmod a+rw /dev/ttyUSB0

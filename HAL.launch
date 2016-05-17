@@ -1,0 +1,13 @@
+<launch>
+    <node pkg="odom" name="odomPublisher" output="screen" type="odomPublisher">
+    </node>
+    <node pkg="sicktoolbox_wrapper" name="sicklms" output="screen" type="sicklms">
+	<param name="port" value="/dev/ttyUSB0" />
+	<!--<param name="frame" value="base_laser" />-->
+    </node>
+    <!--<node pkg="transform" name="tf_publisher" type="tf_broadcaster" /> -->
+    
+    <node pkg="roboteq_driver" type="speedPublisher.py" name="roboteq" output="screen">
+    </node>
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_base_laser" args="0.26035 0.18415 1 0 0 0 base_link laser 100" />
+</launch>
